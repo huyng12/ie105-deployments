@@ -16,6 +16,8 @@ RUN composer dump-autoload --optimize --apcu --no-dev
 
 FROM php:8.0.13-apache
 
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
 RUN docker-php-ext-install mysqli
 
 COPY .env /var/www/html
