@@ -2,7 +2,10 @@ FROM alpine/git:v2.32.0 as download
 
 WORKDIR /app
 
-RUN git clone https://github.com/huyng12/cms-php-app.git
+ARG COMMIT_HASH
+RUN git clone https://github.com/huyng12/cms-php-app.git \
+    && cd cms-php-app \
+    && git reset --hard $COMMIT_HASH
 
 FROM composer/composer as dep
 

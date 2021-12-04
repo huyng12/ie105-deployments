@@ -3,7 +3,10 @@ version: "3.9"
 services:
   cms:
     container_name: cms
-    build: ../cms
+    build:
+      context: ../cms
+      args:
+        COMMIT_HASH: 242da2c146c6d93be2eeaf0b695a6928f93c700b
     depends_on:
       - mariadb
     ports:
