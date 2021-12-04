@@ -2,7 +2,7 @@ FROM alpine/git:v2.32.0 as download
 
 WORKDIR /app
 
-RUN git clone https://github.com/quang-pth/cms-php-app.git
+RUN git clone https://github.com/huyng12/cms-php-app.git
 
 FROM composer/composer as dep
 
