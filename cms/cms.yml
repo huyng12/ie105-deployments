@@ -6,7 +6,7 @@ services:
     build:
       context: ../cms
       args:
-        COMMIT_HASH: e07f295ffc38c33a2bc71e0481857928c67caa56
+        COMMIT_HASH: 4ccf84a68d9328e45af9ea473ca62c192b3e1326
     depends_on:
       - mariadb
     ports:
